@@ -1,0 +1,23 @@
+.main-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgreen;
+    max-width: 220px;
+    margin: auto;
+    border-radius: 200px;
+    margin-top: 300px;
+    cursor: pointer;
+    border: 1px solid gray;
+}
+
+.main-text {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-size: 21px;
+    padding: 4px;
+}
+
+.main-btn:hover {
+    opacity: .9;
+}
