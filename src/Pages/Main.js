@@ -7,19 +7,23 @@ import axios from 'axios';
 function Main() {
 
     const handleLoginSuccess = async (credentialResponse) => {
-        const { token } = credentialResponse; // Adjust according to your response structure
-        
-        // Send token to the backend
-        const response = await fetch('http://127.0.0.1:5000/get_emails', {
+        console.log(credentialResponse);
+
+        fetch('http://127.0.0.1:5000/api/fetch_emails', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+              'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ token: token }),
-        });
-        
-        const data = await response.json();
-        console.log(data);
+            body: JSON.stringify({ credential: credentialResponse.credential }),
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Emails:', data);
+            // Process the emails as needed
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
         window.location.href = '/confirmation';
     };
     
