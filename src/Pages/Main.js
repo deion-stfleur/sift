@@ -10,7 +10,9 @@ function Main() {
 
     const [tokenResponse, setTokenResponse] = useState(null);
     const handleLoginSuccess = async (credentialResponse) => {
-      console.log("User Data: ", credentialResponse.access_token);
+      console.log("User Data: ", credentialResponse);
+      const accessToken = credentialResponse.credential;
+      console.log("Access Token: ", accessToken);
     };
     
     const handleLoginError = () => {
