@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import './Main.css'
 import axios from 'axios';
@@ -6,11 +6,15 @@ import axios from 'axios';
 
 function Main() {
 
+    const [tokenResponse, setTokenResponse] = useState(null);
     const handleLoginSuccess = async (credentialResponse) => {
-        const response = await fetch('https://openidconnect.googleapis.com/v1/userinfo?access_token=' + credentialResponse.credential);
+        const token = credentialResponse.credential;
+        const response = await fetch('https://openidconnect.googleapis.com/v1/userinfo?access_token=' + token);
         const userData = await response.json();
         console.log("Login Successful with user data:", userData);
-        alert(`Signed in as ${userData.email} and ${credentialResponse.credential}`);
+        console.log(token);
+        setTokenResponse(token);
+        alert(`Signed in as ${userData.email} and ${token}`);
         // window.location.href = '/confirmation';
     };
     
@@ -36,6 +40,7 @@ function Main() {
                     <p className='main-text'>Sign in with Google</p>
                 </div> */}
                 </GoogleOAuthProvider>
+                <p>{tokenResponse}</p>
             </div>
     </div>
     </>
