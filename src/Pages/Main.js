@@ -12,10 +12,7 @@ function Main() {
     const handleLoginSuccess = async (credentialResponse) => {
       console.log("User Data: ", credentialResponse);
       const accessToken = credentialResponse.credential;
-      const response = await fetch('https://openidconnect.googleapis.com/v1/userinfo?access_token=' + accessToken);
-      const userData = await response.json();
-      console.log("User Email: ", userData.email);
-      console.log("User ID: ", userData.sub);
+      console.log("Access Token: ", accessToken);
     };
     
     const handleLoginError = () => {
