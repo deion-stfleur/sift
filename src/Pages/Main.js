@@ -9,7 +9,7 @@ function Main() {
     const handleLoginSuccess = async (credentialResponse) => {
         console.log(credentialResponse);
 
-        fetch('http://127.0.0.1:5000/api/fetch_emails', {
+        fetch('http://127.0.0.1:5000/api/get_emails', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
