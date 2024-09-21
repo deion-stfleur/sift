@@ -7,23 +7,10 @@ import axios from 'axios';
 function Main() {
 
     const handleLoginSuccess = async (credentialResponse) => {
-        console.log(credentialResponse);
-
-        fetch('http://127.0.0.1:5000/api/get_emails', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ credential: credentialResponse.credential }),
-          })
-          .then(response => response.json())
-          .then(data => {
-            console.log('Emails:', data);
-            // Process the emails as needed
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
+        const response = await fetch('https://openidconnect.googleapis.com/v1/userinfo?access_token=' + credentialResponse.credential);
+        const userData = await response.json();
+        console.log("Login Successful with user data:", userData);
+        alert(`Signed in as ${userData.email}`);
         // window.location.href = '/confirmation';
     };
     
