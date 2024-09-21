@@ -7,24 +7,20 @@ import axios from 'axios';
 function Main() {
 
     const handleLoginSuccess = async (credentialResponse) => {
-        console.log(credentialResponse);
-        const token = credentialResponse.credential; // Extract the token
-    
-        try {
-            // Send the token to your backend for email scraping
-            const response = await axios.post('http://127.0.0.1:5000/get_emails', {
-                token: token
-            });
-    
-            // Handle the response from your backend
-            console.log('Emails scraped:', response.data);
-    
-            // Navigate to the confirmation page
-            window.location.href = '/confirmation';
-        } catch (error) {
-            console.error('Error sending token to backend:', error);
-            // Handle error (e.g., show an error message to the user)
-        }
+        const { token } = credentialResponse; // Adjust according to your response structure
+        
+        // Send token to the backend
+        const response = await fetch('http://127.0.0.1:5000/get_emails', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ token: token }),
+        });
+        
+        const data = await response.json();
+        console.log(data);
+        window.location.href = '/confirmation';
     };
     
     const handleLoginError = () => {
