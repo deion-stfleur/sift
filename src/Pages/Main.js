@@ -26,24 +26,22 @@ function Main() {
     //   };
 
     const handleLoginSuccess = async (credentialResponse) => {
-        console.log('Google Login Successful:', credentialResponse);
-    
+        console.log(credentialResponse);
         try {
-          // Send the credential (OAuth token) to your backend for scraping emails
-          const response = await axios.post('http://127.0.0.1:5000/get_emails', {
-            token: credentialResponse.credential
-          });
-    
-          // Handle the response (scraped emails) from your backend
-          console.log('Emails scraped:', response.data);
-    
-          // Redirect to confirmation page after successful scraping
-          window.location.href = '/confirmation';
+            const response = await axios.post('http://127.0.0.1:5000/get_emails', {
+              token: credentialResponse.access_token 
+            });
+            
+          
+            console.log('Emails scraped:', response.data);
+            
+
+            window.location.href = '/confirmation';
         } catch (error) {
-          console.error('Error sending token to backend:', error);
-          // Display error message to the user (optional)
+            console.error('Error sending token to backend:', error);
+          
         }
-      };
+    };
     
       const handleLoginError = () => {
         console.log('Login Failed');
