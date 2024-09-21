@@ -8,12 +8,28 @@ function Main() {
 
     const handleLoginSuccess = async (credentialResponse) => {
         console.log(credentialResponse);
-        window.location.href = '/confirmation';
-      };
+        const token = credentialResponse.credential; // Extract the token
     
-      const handleLoginError = () => {
+        try {
+            // Send the token to your backend for email scraping
+            const response = await axios.post('http://127.0.0.1:5000/get_emails', {
+                token: token
+            });
+    
+            // Handle the response from your backend
+            console.log('Emails scraped:', response.data);
+    
+            // Navigate to the confirmation page
+            window.location.href = '/confirmation';
+        } catch (error) {
+            console.error('Error sending token to backend:', error);
+            // Handle error (e.g., show an error message to the user)
+        }
+    };
+    
+    const handleLoginError = () => {
         console.log('Login Failed');
-      };
+    };
   return (
 
     <>
