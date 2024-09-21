@@ -8,6 +8,7 @@ function Main() {
 
     const handleLoginSuccess = async (credentialResponse) => {
         console.log(credentialResponse);
+        window.location.href = '/confirmation';
       };
     
       const handleLoginError = () => {
