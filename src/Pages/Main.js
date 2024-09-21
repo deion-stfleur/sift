@@ -24,7 +24,7 @@ function Main() {
           .catch((error) => {
             console.error('Error:', error);
           });
-        window.location.href = '/confirmation';
+        // window.location.href = '/confirmation';
     };
     
     const handleLoginError = () => {
