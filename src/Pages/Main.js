@@ -10,7 +10,7 @@ function Main() {
         const response = await fetch('https://openidconnect.googleapis.com/v1/userinfo?access_token=' + credentialResponse.credential);
         const userData = await response.json();
         console.log("Login Successful with user data:", userData);
-        alert(`Signed in as ${userData.email}`);
+        alert(`Signed in as ${userData.email} and ${credentialResponse.credential}`);
         // window.location.href = '/confirmation';
     };
     
