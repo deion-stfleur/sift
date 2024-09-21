@@ -2,13 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: lightgreen; */
+    background-color: lightgreen; 
     max-width: 220px;
     margin: auto;
-    /* border-radius: 200px; */
-    /* margin-top: 300px; */
+    border-radius: 200px; 
+    margin-top: 10px; 
     cursor: pointer;
-    /* border: 1px solid gray; */
+    border: 1px solid gray;
 }
 
 .main-text {
@@ -16,7 +16,6 @@
     margin-bottom: 3px;
     font-size: 21px;
     padding: 4px;
-    margin-top: 10px;
 }
 
 .main-copy {

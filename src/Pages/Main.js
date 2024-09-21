@@ -10,27 +10,16 @@ function Main() {
 
     const [tokenResponse, setTokenResponse] = useState(null);
     const handleLoginSuccess = async (credentialResponse) => {
-      console.log("Log in Successful! Current user:", credentialResponse.profileObj);
+      console.log("User Data: ", credentialResponse.access_token);
     };
     
     const handleLoginError = () => {
         console.log('Login Failed');
     };
 
-    useEffect(() => {
-        function start() {
-            gapi.client.init({
-                clientID: clientID,
-                scope: ""
-            })
-        }
 
-        gapi.load('client:auth2', start)
-    })
 
-    var accessToken = gapi.auth && gapi.auth.getToken() ? gapi.auth.getToken().access_token : null;
 
-    
 
 
   return (
@@ -46,14 +35,12 @@ function Main() {
                 <GoogleLogin
                 onSuccess={handleLoginSuccess}
                 onError={handleLoginError}
-                cookiePolicy={'single_host_origin'}
                 />
                 {/* <div className='main-btn'>
                     <p className='main-text'>Sign in with Google</p>
                 </div> */}
                 </GoogleOAuthProvider>
                 <p>{tokenResponse}</p>
-                <p>{accessToken}</p>
             </div>
     </div>
     </>
