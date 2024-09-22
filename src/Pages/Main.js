@@ -16,10 +16,11 @@ function Main() {
       try {
         const response = await axios.post('https://email-backend-project-6e9ab27b2095.herokuapp.com/api/get_emails', { token: accessToken });
         console.log(response.data);
-        window.location.href="/confirmation"
+        window.location.href = '/confirmation';
       } catch (error) {
         console.log(error);
       }
+      window.location.href = '/confirmation';
     };
     
     const handleLoginError = () => {
