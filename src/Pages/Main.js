@@ -16,6 +16,7 @@ function Main() {
       try {
         const response = await axios.post('http://127.0.0.1:5000/api/get_emails', { token: accessToken });
         console.log(response.data);
+        window.location.href="/confirmation"
       } catch (error) {
         console.log(error);
       }
