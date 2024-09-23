@@ -37,7 +37,7 @@ function Main() {
     <>
 
     <div className='main-container'>
-             <h1 className='main-heading'>sift!</h1>
+             <h1 id="get-started" className='main-heading'>sift!</h1>
              <p className='main-copy'>We help you discover better alternatives for the products you buy, while saving you money.</p>
             <div className='main-btn'>
 
@@ -52,6 +52,38 @@ function Main() {
                 </GoogleOAuthProvider>
                 <p>{tokenResponse}</p>
             </div>
+
+
+
+        <div className='second-section'>
+            {/* <div style={{height: .04,backgroundColor: 'transparent', width: '100%'}}></div> */}
+{/* 
+             <div className='btn-container'>
+            <p className='btn-container-text'>How it works!</p>
+            </div> */}
+            {/* <p className='main-sec2-h1'>Let us handle the hard work, so you can reap the benefits.</p> */}
+           
+           {/* <a style={{textDecoration: 'unset !important', color: 'black'}} href="/#get-started">
+            <div className='btn-container-2'>
+            <p className='btn-container-text-2'>Sign up now- it's free</p>
+            </div>
+           </a> */}
+
+           {/* <div className='sec-width'>
+
+            <div className='gray-box'>
+                <p>Step 1 - Sign Up</p>
+            </div>
+            <div className='gray-box'>
+                <p>Step 2 - We track all recent and current order history</p>
+            </div>
+            <div className='gray-box'>
+                <p>Step 3 - We will notify you once we find the right products for you</p>
+            </div>
+
+           </div> */}
+
+        </div>
     </div>
     </>
   )

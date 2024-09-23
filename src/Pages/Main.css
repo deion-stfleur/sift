@@ -5,6 +5,7 @@
     margin: auto;
     margin-top: 10px; 
     cursor: pointer;
+    margin-bottom: 120px;
 }
 
 .main-text {
@@ -12,6 +13,78 @@
     margin-bottom: 3px;
     font-size: 21px;
     padding: 4px;
+}
+
+.btn-container {
+    border: 1px solid transparent;
+    border-radius: 200px;
+    margin: auto;
+    margin-top: 25px;
+    max-width: 110px;
+    background-color: white;
+}
+
+.btn-container-2 {
+    border: 1px solid gray;
+    border-radius: 200px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 250px;
+    max-width: 190px;
+    background-color: lightgreen;
+    cursor: pointer;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.main-sec2-h1 {
+    text-align: center;
+    margin-top: 45px !important;
+    font-weight: bold;
+    color: white;
+    font-size: 26px;
+    line-height: 1.5;
+    max-width: 390px;
+    margin: auto;
+}
+
+.btn-container-text {
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 2px;
+    font-size: 15px;
+}
+
+.btn-container-text-2 {
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 12px;
+    font-size: 15px;
+    color: black !important;
+}
+
+.second-section {
+    /* background-color: #40413f; */
+    height: 72%;
+    margin: auto;
+    position: absolute;
+    width: 100%;
+    display: none;
+}
+
+.sec-width {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+
+.btn-container-2:hover {
+    opacity: .9;
 }
 
 .main-copy {
@@ -22,6 +95,10 @@
     line-height: 24px;
     margin-top: 20px !important;
     margin: auto;
+}
+
+.gray-box {
+    background-color: gray;
 }
 
 .main-heading {
