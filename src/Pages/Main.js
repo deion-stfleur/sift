@@ -24,12 +24,7 @@ function Main() {
       // }
       // window.location.href = '/confirmation';
 
-      try {
-        console.log("test worked");
-        window.location.href = '/confirmation';
-      } catch (error) {
-        console.log(error);
-      }
+   
     };
     
     const handleLoginError = () => {
