@@ -11,16 +11,25 @@ function Main() {
     const [tokenResponse, setTokenResponse] = useState(null);
     const handleLoginSuccess = async (credentialResponse) => {
       console.log("User Data: ", credentialResponse);
-      const accessToken = credentialResponse.credential;
-      console.log("Access Token: ", accessToken);
+      alert("User Data: ", credentialResponse + "token:" + credentialResponse.credential);
+      // alert("Access Token: ", credentialResponse.credential);
+      // const accessToken = credentialResponse.credential;
+      // console.log("Access Token: ", accessToken);
+      // try {
+      //   const response = await axios.post('https://email-backend-project-6e9ab27b2095.herokuapp.com/api/get_emails', { token: accessToken });
+      //   console.log(response.data);
+      //   window.location.href = '/confirmation';
+      // } catch (error) {
+      //   console.log(error);
+      // }
+      // window.location.href = '/confirmation';
+
       try {
-        const response = await axios.post('https://email-backend-project-6e9ab27b2095.herokuapp.com/api/get_emails', { token: accessToken });
-        console.log(response.data);
+        console.log("test worked");
         window.location.href = '/confirmation';
       } catch (error) {
         console.log(error);
       }
-      window.location.href = '/confirmation';
     };
     
     const handleLoginError = () => {
@@ -50,6 +59,8 @@ function Main() {
                     <p className='main-text'>Sign in with Google</p>
                 </div> */}
                 </GoogleOAuthProvider>
+               
+             
                 <p>{tokenResponse}</p>
             </div>
 
